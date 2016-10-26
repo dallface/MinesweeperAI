@@ -42,7 +42,7 @@ namespace MinesweeperAI
             List<Tile> tiles = CreateTiles(buttonElements);
             WriteTimeMessage("Tile List Created", sw);
 
-            Board = new Grid(tiles, 9);
+            Board = new Grid(tiles);
             WriteTimeMessage("Board Created", sw);
         }
 

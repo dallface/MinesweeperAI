@@ -11,7 +11,7 @@ namespace MinesweeperAI
         public List<List<Tile>> Rows = new List<List<Tile>>();
         public int BombsRemaining { get; set; }
         private Graph<Tile> Board = new Graph<Tile>();
-        public Grid(List<Tile> gridButtons, int bombCount)
+        public Grid(List<Tile> gridButtons)
         {
             List<Tile> row = new List<Tile>();
             double? curY = null;

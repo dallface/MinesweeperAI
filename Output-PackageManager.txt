@@ -1,0 +1,9 @@
+﻿Attempting to gather dependency information for package 'NUnit.3.5.0' with respect to project 'MinesweeperAI', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'NUnit.3.5.0' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'NUnit.3.5.0'
+Resolved actions to install package 'NUnit.3.5.0'
+Adding package 'NUnit.3.5.0' to folder 'c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\packages'
+Added package 'NUnit.3.5.0' to folder 'c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\packages'
+Added package 'NUnit.3.5.0' to 'packages.config'
+Successfully installed 'NUnit 3.5.0' to MinesweeperAI
+========== Finished ==========

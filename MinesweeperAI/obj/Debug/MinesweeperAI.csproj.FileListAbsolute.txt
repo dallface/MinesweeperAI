@@ -11,3 +11,16 @@ c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\MinesweeperAI
 c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\MinesweeperAI\bin\Debug\TestStack.White.xml
 c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\MinesweeperAI\obj\Debug\MinesweeperAI.exe
 c:\users\dalll\documents\visual studio 2015\Projects\MinesweeperAI\MinesweeperAI\obj\Debug\MinesweeperAI.pdb
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\MinesweeperAI.exe.config
+C:\Repos\MinesweeperAI\MinesweeperAI\obj\Debug\MinesweeperAI.exe
+C:\Repos\MinesweeperAI\MinesweeperAI\obj\Debug\MinesweeperAI.pdb
+C:\Repos\MinesweeperAI\MinesweeperAI\obj\Debug\MinesweeperAI.csprojResolveAssemblyReference.cache
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\MinesweeperAI.exe
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\MinesweeperAI.pdb
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\Castle.Core.dll
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\nunit.framework.dll
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\TestStack.White.dll
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\Castle.Core.xml
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\nunit.framework.xml
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\TestStack.White.pdb
+C:\Repos\MinesweeperAI\MinesweeperAI\bin\Debug\TestStack.White.xml

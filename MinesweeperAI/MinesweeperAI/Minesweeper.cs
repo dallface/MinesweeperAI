@@ -42,10 +42,9 @@ namespace MinesweeperAI
             List<Tile> tiles = CreateTiles(buttonElements);
             WriteTimeMessage("Tile List Created", sw);
 
-            Board = new Grid(tiles, 9);
+            Board = new Grid(tiles);
             WriteTimeMessage("Board Created", sw);
         }
-
         private void getMainWindow()
         {
             ProcessStartInfo startinfo = new ProcessStartInfo(_applicationPath);
@@ -59,25 +58,20 @@ namespace MinesweeperAI
             }
             WriteTimeMessage("Main Window Found", sw);
         }
-
         public static void WriteTimeMessage(string message, Stopwatch sw)
         {
             Console.WriteLine(message + " after {0}s", sw.Elapsed.TotalSeconds);
             sw.Restart();
         }
-
         private List<Tile> CreateTiles(List<IUIItem> elements)
         {
             List<Tile> tiles = new List<Tile>();            
             foreach (IUIItem element in elements)
             {
-                BackgroundWorker bw = new BackgroundWorker();
-                TileWorkers.Add(bw);
-                tiles.Add(new Tile(element, bw));
+                tiles.Add(new Tile(element.AutomationElement));
             }
             return tiles;
         }
-
         public enum Difficulty
         {
             Beginner,
@@ -111,23 +105,55 @@ namespace MinesweeperAI
         {
             Tile tile = Board.Rows[(int)p.Y - 1][(int)p.X - 1];
             tile.Click();
+
+            asdf(tile);
+
         }
 
-        private List<BackgroundWorker> ActiveWorkers;
+
+        //private List<BackgroundWorker> ActiveWorkers;
         public void Sweep()
         {
-            ActiveWorkers = new List<BackgroundWorker>();
-            foreach(BackgroundWorker bw in TileWorkers)
+            //Stopwatch sw = new Stopwatch();
+            //sw.Start();
+
+            //ActiveWorkers = new List<BackgroundWorker>();
+            //foreach(BackgroundWorker bw in TileWorkers)
+            //{
+            //    bw.RunWorkerCompleted += Bw_RunWorkerCompleted;
+            //    bw.RunWorkerAsync();
+            //    ActiveWorkers.Add(bw);
+            //}
+            //WriteTimeMessage("All workers started", sw);
+            //while(ActiveWorkers.Count > 0)
+            //{
+            //    Thread.Sleep(100);
+            //}
+        }
+
+        private void asdf(Tile origin)
+        {
+            origin.Update();
+            if (origin.State == Tile.TileState.Active)
             {
-                bw.RunWorkerCompleted += Bw_RunWorkerCompleted;
-                bw.RunWorkerAsync();
-                ActiveWorkers.Add(bw);
+                origin.SingleInfer();
+                Board.Remove(origin);
+                foreach (Tile t in origin.Neighbors)
+                {
+                    asdf(t);
+                }
             }
-            while(ActiveWorkers.Count > 0)
+            else if(origin.State == Tile.TileState.Dead)
             {
-                Thread.Sleep(100);
+                Board.Remove(origin);
+                foreach (Tile t in origin.Neighbors)
+                {
+                    asdf(t);
+                }
             }
         }
+
+
 
         private void Bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -139,7 +165,6 @@ namespace MinesweeperAI
 
 
         }
-
         public bool CheckDialogPopUp()
         {
             Window dialog = _application.GetWindows().Find(x => x.Name.Contains("Game"));
